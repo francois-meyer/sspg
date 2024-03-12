@@ -2,7 +2,7 @@
 
 Code for the subword segmental pointer generator (SSPG) proposed in the paper *Triples-to-isiXhosa (T2X): Addressing the Challenges of Low-Resource Agglutinative Data-to-Text Generation*, Francois Meyer and Jan Buys, LREC-COLING 2024.
 
-SSPG is implemented as a model in fairseq. The code in this repo can be used to train new SSPG models and to generate data-to-text with trained SSPG models using unmixed or dynamic decoding. The SSPG models trained for our paper (for isiXhosa and Finnish data-to-text) are publicly available:
+SSPG is implemented as a model in fairseq. The code in this repo can be used to train new SSPG models for data-to-text. Trained SSPG models can be used to generate text from data using either unmixed or dynamic decoding. The SSPG models trained for our paper (for isiXhosa and Finnish data-to-text) are publicly available:
 * [SSPG for isiXhosa T2X data-to-text](https://drive.google.com/file/d/1JQEN_Fu0JfBqLgI5MUNQKbAjcuPbYAM6/view?usp=sharing)
 * [SSPG for Finnish Hockey data-to-text](https://drive.google.com/file/d/1q52vJfj8F6iAfYawjgxDo1W0JJnxUg6Z/view?usp=sharing)
 
@@ -46,7 +46,7 @@ python fairseq/fairseq_cli/preprocess.py --dataset-impl=raw \
 
 ```shell
 python fairseq/fairseq_cli/train.py --dataset-impl=raw \
-    $DATA_DIR --task subword_segmental_data2text --source-lang data --target-lang text\
+    $DATA_DIR --task subword_segmental_data2text --source-lang data --target-lang text \
     --max-epoch 50 --optimizer adam --lr 0.001 --lr-scheduler inverse_sqrt \
     --arch ssd2t --criterion subword_segmental_cross_entropy \
     --encoder-bidirectional --decoder-attention True --decoder-copy \
