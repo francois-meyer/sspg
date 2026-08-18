@@ -71,8 +71,6 @@ python fairseq/fairseq_cli/generate_ssd2t.py \
 
 ### Citation
 
-If you use this dataset, please cite:
-
 ```bibtex
 @inproceedings{meyer-buys-2024-triples,
     title = "Triples-to-isi{X}hosa ({T}2{X}): Addressing the Challenges of Low-Resource Agglutinative Data-to-Text Generation",
